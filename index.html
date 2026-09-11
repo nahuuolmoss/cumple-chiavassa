@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz cumple, Chiavassa 🎉</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= FONDO ANIMADO ================= -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="bg-glow bg-glow--one"></div>
+  <div class="bg-glow bg-glow--two"></div>
+
+  <!-- ================= CONTENIDO PRINCIPAL ================= -->
+  <main class="stage">
+
+    <div class="gift-card" id="gift-card">
+
+      <!-- ============ IMAGEN ============ -->
+      <div class="photo-frame" id="photo-frame" role="button" tabindex="0" title="Ver imagen en grande">
+        <img src="assets/imagen.jpg" alt="Foto de Chiavassa" id="birthday-photo">
+        <div class="photo-frame__shine"></div>
+      </div>
+
+      <!-- ============ TÍTULO ============ -->
+      <p class="eyebrow">Un mensaje generado con cariño (y poco presupuesto)</p>
+      <h1 class="headline">Chat gpt dame un saludo de cumpleaños de un dolar</h1>
+      <p class="subtitle">Resulta que salió mejor de lo esperado. Feliz cumple.</p>
+
+      <!-- ============ NOMBRE Y EDAD ============ -->
+      <div class="name-plate">
+        <span class="name-plate__name" id="birthday-name">CHIAVASSA</span>
+        <span class="name-plate__divider" aria-hidden="true"></span>
+        <span class="name-plate__age"><strong id="birthday-age">19</strong> AÑOS</span>
+      </div>
+
+      <!-- ============ BOTÓN PRINCIPAL ============ -->
+      <button class="open-btn" id="open-btn" type="button">
+        <span class="open-btn__text">ABRIR SALUDO</span>
+        <span class="open-btn__emoji" aria-hidden="true">🎁</span>
+      </button>
+
+      <audio id="bg-music" src="assets/musica.mp3" loop preload="none"></audio>
+
+    </div>
+
+  </main>
+
+  <!-- ================= CANVAS DE CONFETI / EFECTOS ================= -->
+  <canvas id="fx-canvas"></canvas>
+
+  <!-- ================= MODAL DE VIDEO ================= -->
+  <div class="video-modal" id="video-modal" aria-hidden="true">
+    <div class="video-modal__backdrop" id="video-backdrop"></div>
+
+    <div class="video-modal__box" id="video-box">
+      <button class="video-modal__close" id="video-close" aria-label="Cerrar video" type="button">✕</button>
+
+      <video id="greeting-video" controls playsinline>
+        <source src="assets/saludo.mp4" type="video/mp4">
+        Tu navegador no puede reproducir este video.
+      </video>
+    </div>
+  </div>
+
+  <!-- ================= MODAL DE IMAGEN (POP-UP) ================= -->
+  <div class="image-modal" id="image-modal" aria-hidden="true">
+    <div class="image-modal__backdrop" id="image-backdrop"></div>
+
+    <div class="image-modal__box" id="image-box">
+      <button class="image-modal__close" id="image-close" aria-label="Cerrar imagen" type="button">✕</button>
+      <img src="assets/imagen.jpg" alt="Foto de Chiavassa en grande" id="modal-expanded-photo">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
